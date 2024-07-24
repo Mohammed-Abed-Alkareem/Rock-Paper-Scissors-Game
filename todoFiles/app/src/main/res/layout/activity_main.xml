@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp"
+    android:gravity="center"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:text="Rock-Paper-Scissors"
+        android:textSize="39sp"
+        android:textStyle="bold" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="50dp"
+        android:gravity="center_horizontal">
+
+        <FrameLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp">
+
+            <ImageButton
+                android:id="@+id/button_rock"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:src="@drawable/rock"
+                android:contentDescription="@string/rock"
+                android:scaleType="centerInside"
+                android:background="?attr/selectableItemBackgroundBorderless"/>
+
+            <TextView
+                android:layout_width="102dp"
+                android:layout_height="102dp"
+                android:background="#80000000"
+                android:paddingTop="25dp"
+                android:text="@string/rock"
+                android:textAlignment="center"
+                android:textColor="@android:color/white"
+                android:textSize="34sp"
+                android:textStyle="bold" />
+        </FrameLayout>
+
+        <FrameLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp">
+
+            <ImageButton
+                android:id="@+id/button_paper"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:src="@drawable/paper"
+                android:contentDescription="@string/paper"
+                android:scaleType="centerInside"
+                android:background="?attr/selectableItemBackgroundBorderless"/>
+
+            <TextView
+                android:layout_width="102dp"
+                android:layout_height="102dp"
+                android:background="#80000000"
+                android:paddingTop="25dp"
+                android:text="@string/paper"
+                android:textAlignment="center"
+                android:textColor="@android:color/white"
+                android:textSize="34sp"
+                android:textStyle="bold" />
+        </FrameLayout>
+
+        <FrameLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp">
+
+            <ImageButton
+                android:id="@+id/button_scissors"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:src="@drawable/scissors"
+                android:contentDescription="@string/scissors"
+                android:scaleType="centerInside"
+                android:background="?attr/selectableItemBackgroundBorderless"/>
+
+            <TextView
+                android:layout_width="102dp"
+                android:layout_height="102dp"
+                android:background="#80000000"
+                android:paddingTop="35dp"
+                android:text="@string/scissors"
+                android:textAlignment="center"
+                android:textColor="@android:color/white"
+                android:textSize="26sp"
+                android:textStyle="bold" />
+        </FrameLayout>
+    </LinearLayout>
+
+    <!-- Cumulative Score -->
+    <TextView
+        android:id="@+id/score"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="20dp"
+        android:text="Score: 0"
+        android:textColor="@android:color/holo_green_dark"
+        android:textSize="34sp" />
+
+    <ImageView
+        android:id="@+id/adversary_choice"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_marginTop="20dp"
+        android:contentDescription="@string/adversary_choice"
+        android:visibility="invisible" />
+
+    <TextView
+        android:id="@+id/name_id"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="20dp"
+        android:text="Mohammed Abed Alkareem - 1210708" />
+</LinearLayout>
