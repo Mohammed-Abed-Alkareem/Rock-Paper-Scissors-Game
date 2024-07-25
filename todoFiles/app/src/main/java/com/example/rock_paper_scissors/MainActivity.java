@@ -117,7 +117,7 @@ public class MainActivity extends AppCompatActivity {
     public void calculateScore(String playerChoice, String adversaryChoice) {
         if (playerChoice.equals("rock")) {
             if (adversaryChoice.equals("rock")) {
-                score -= 1;
+                score += 1;
                 feedback = "Draw!";
             }
             else if (adversaryChoice.equals("paper")) {
@@ -136,7 +136,7 @@ public class MainActivity extends AppCompatActivity {
                 feedback = "You win ^_^";
             }
             else if (adversaryChoice.equals("paper")) {
-                score -= 1;
+                score += 1;
                 feedback = "Draw!";
             }
             else {
@@ -155,7 +155,7 @@ public class MainActivity extends AppCompatActivity {
                 feedback = "You win ^_^";
             }
             else {
-                score -= 1;
+                score += 1;
                 feedback = "Draw!";
             }
         }
