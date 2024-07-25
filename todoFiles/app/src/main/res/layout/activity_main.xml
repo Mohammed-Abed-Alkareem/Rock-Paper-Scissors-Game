@@ -6,6 +6,7 @@
     android:orientation="vertical"
     android:padding="16dp"
     android:gravity="center"
+    android:background="@drawable/wallpaper"
     tools:context=".MainActivity">
 
     <TextView
@@ -13,7 +14,10 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
+        android:shadowColor="#000000"
+        android:shadowRadius="30"
         android:text="Rock-Paper-Scissors"
+        android:textColor="#FFFFFF"
         android:textSize="39sp"
         android:textStyle="bold" />
 
@@ -31,22 +35,26 @@
 
             <ImageButton
                 android:id="@+id/button_rock"
-                android:layout_width="100dp"
-                android:layout_height="100dp"
+                android:layout_width="110dp"
+                android:layout_height="120dp"
                 android:src="@drawable/rock"
                 android:contentDescription="@string/rock"
                 android:scaleType="centerInside"
                 android:background="?attr/selectableItemBackgroundBorderless"/>
 
             <TextView
-                android:layout_width="102dp"
-                android:layout_height="102dp"
-                android:background="#80000000"
-                android:paddingTop="25dp"
+                android:layout_width="110dp"
+                android:layout_height="wrap_content"
+                android:shadowColor="#000000"
+                android:shadowRadius="4"
+                android:shadowDx="2"
+                android:shadowDy="2"
+                android:layout_gravity="center_horizontal|bottom"
+                android:layout_marginTop="10dp"
                 android:text="@string/rock"
                 android:textAlignment="center"
                 android:textColor="@android:color/white"
-                android:textSize="34sp"
+                android:textSize="20sp"
                 android:textStyle="bold" />
         </FrameLayout>
 
@@ -57,22 +65,26 @@
 
             <ImageButton
                 android:id="@+id/button_paper"
-                android:layout_width="100dp"
-                android:layout_height="100dp"
+                android:layout_width="110dp"
+                android:layout_height="120dp"
                 android:src="@drawable/paper"
                 android:contentDescription="@string/paper"
                 android:scaleType="centerInside"
                 android:background="?attr/selectableItemBackgroundBorderless"/>
 
             <TextView
-                android:layout_width="102dp"
-                android:layout_height="102dp"
-                android:background="#80000000"
-                android:paddingTop="25dp"
+                android:layout_width="110dp"
+                android:layout_height="wrap_content"
+                android:shadowColor="#000000"
+                android:shadowRadius="4"
+                android:shadowDx="2"
+                android:shadowDy="2"
+                android:layout_gravity="center_horizontal|bottom"
+                android:layout_marginTop="10dp"
                 android:text="@string/paper"
                 android:textAlignment="center"
                 android:textColor="@android:color/white"
-                android:textSize="34sp"
+                android:textSize="20sp"
                 android:textStyle="bold" />
         </FrameLayout>
 
@@ -83,25 +95,31 @@
 
             <ImageButton
                 android:id="@+id/button_scissors"
-                android:layout_width="100dp"
-                android:layout_height="100dp"
+                android:layout_width="110dp"
+                android:layout_height="120dp"
                 android:src="@drawable/scissors"
                 android:contentDescription="@string/scissors"
                 android:scaleType="centerInside"
                 android:background="?attr/selectableItemBackgroundBorderless"/>
 
             <TextView
-                android:layout_width="102dp"
-                android:layout_height="102dp"
-                android:background="#80000000"
-                android:paddingTop="35dp"
+                android:layout_width="110dp"
+                android:layout_height="wrap_content"
+                android:shadowColor="#000000"
+                android:shadowRadius="4"
+                android:shadowDx="2"
+                android:shadowDy="2"
+                android:layout_gravity="center_horizontal|bottom"
+                android:layout_marginTop="10dp"
                 android:text="@string/scissors"
                 android:textAlignment="center"
                 android:textColor="@android:color/white"
-                android:textSize="26sp"
+                android:textSize="20sp"
                 android:textStyle="bold" />
         </FrameLayout>
     </LinearLayout>
+
+
 
     <!-- Cumulative Score -->
     <TextView
@@ -110,9 +128,20 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
         android:layout_marginTop="20dp"
+        android:background="#000000"
+        android:backgroundTint="#685E5E"
+        android:shadowColor="#000000"
+        android:shadowDx="0"
+        android:shadowDy="0"
+        android:shadowRadius="10"
         android:text="Score: 0"
-        android:textColor="@android:color/holo_green_dark"
-        android:textSize="34sp" />
+        android:textColor="@android:color/holo_green_light"
+        android:textSize="40sp"
+        android:textStyle="bold"
+
+        android:padding="10dp"
+       />
+
 
     <ImageView
         android:id="@+id/adversary_choice"
@@ -128,5 +157,10 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
         android:layout_marginTop="20dp"
-        android:text="Mohammed Abed Alkareem - 1210708" />
+        android:text="Mohammed Abed Alkareem - 1210708"
+        android:textColor="#FFFFFF"
+        android:textSize="20dp"
+        android:shadowColor="#000000"
+        android:shadowRadius="30"
+        android:textStyle="bold" />
 </LinearLayout>

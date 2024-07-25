@@ -60,8 +60,9 @@ public class MainActivity extends AppCompatActivity {
             String adversaryChoice = choices[random.nextInt(choices.length)];
             calculateScore("rock", adversaryChoice);
             updateAdversaryChoiceImage(adversaryChoice);
+            deactivateButtons();
 
-
+            Toast.makeText(this, "Please wait for the result", Toast.LENGTH_LONG).show();
             // Delay to show the result
             new Handler().postDelayed(this::showResult, 5000);
 
@@ -73,7 +74,9 @@ public class MainActivity extends AppCompatActivity {
             String adversaryChoice = choices[random.nextInt(choices.length)];
             calculateScore("paper", adversaryChoice);
             updateAdversaryChoiceImage(adversaryChoice);
+            deactivateButtons();
 
+            Toast.makeText(this, "Please wait for the result", Toast.LENGTH_LONG).show();
             // Delay to show the result
             new Handler().postDelayed(this::showResult, 5000);
 
@@ -84,7 +87,9 @@ public class MainActivity extends AppCompatActivity {
             String adversaryChoice = choices[random.nextInt(choices.length)];
             calculateScore("scissors", adversaryChoice);
             updateAdversaryChoiceImage(adversaryChoice);
+            deactivateButtons();
 
+            Toast.makeText(this, "Please wait for the result", Toast.LENGTH_LONG).show();
             // Delay to show the result
             new Handler().postDelayed(this::showResult, 5000);
 
@@ -94,9 +99,15 @@ public class MainActivity extends AppCompatActivity {
 
     // Method to update the ImageView with the adversary's choice
     private void updateAdversaryChoiceImage(String adversaryChoice) {
-        int imageResource = getResources().getIdentifier(adversaryChoice, "drawable", getPackageName());
-        adversaryChoiceImageView.setImageResource(imageResource);
-        adversaryChoiceImageView.setVisibility(View.VISIBLE);
+        try {
+            int imageResource = getResources().getIdentifier(adversaryChoice, "drawable", getPackageName());
+
+            adversaryChoiceImageView.setImageResource(imageResource);
+            adversaryChoiceImageView.setVisibility(View.VISIBLE);
+        } catch (Exception e) {
+            Toast.makeText(this, "Error loading image", Toast.LENGTH_SHORT).show();
+        }
+
     }
 
     // The cumulative score TextView should be “0” initially and change by:
@@ -108,37 +119,46 @@ public class MainActivity extends AppCompatActivity {
             if (adversaryChoice.equals("rock")) {
                 score -= 1;
                 feedback = "Draw!";
-            } else if (adversaryChoice.equals("paper")) {
+            }
+            else if (adversaryChoice.equals("paper")) {
                 score -= 4;
                 feedback = "You lose *_*";
-            } else {
+            }
+            else {
                 score += 3;
                 feedback = "You win ^_^";
             }
-        } else if (playerChoice.equals("paper")) {
+        }
+
+        else if (playerChoice.equals("paper")) {
             if (adversaryChoice.equals("rock")) {
                 score += 3;
                 feedback = "You win ^_^";
-            } else if (adversaryChoice.equals("paper")) {
+            }
+            else if (adversaryChoice.equals("paper")) {
                 score -= 1;
                 feedback = "Draw!";
-            } else {
+            }
+            else {
                 score -= 4;
                 feedback = "You lose *_*";
             }
-        } else { // playerChoice.equals("scissors")
+        }
+
+        else { // playerChoice.equals("scissors")
             if (adversaryChoice.equals("rock")) {
                 score -= 4;
                 feedback = "You lose *_*";
-            } else if (adversaryChoice.equals("paper")) {
+            }
+            else if (adversaryChoice.equals("paper")) {
                 score += 3;
                 feedback = "You win ^_^";
-            } else {
+            }
+            else {
                 score -= 1;
                 feedback = "Draw!";
             }
         }
-
 
     }
     // Method to start ResultActivity and pass data
@@ -147,6 +167,13 @@ public class MainActivity extends AppCompatActivity {
         resultIntent.putExtra("feedback", feedback);
         resultIntent.putExtra("score", score);
         startActivity(resultIntent);
+    }
+
+    // Method to deactivate the buttons
+    private void deactivateButtons() {
+        findViewById(R.id.button_rock).setEnabled(false);
+        findViewById(R.id.button_paper).setEnabled(false);
+        findViewById(R.id.button_scissors).setEnabled(false);
     }
 
 }
