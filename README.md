@@ -53,7 +53,7 @@ Main Activity                                                       |  Result Ac
 
 1. Clone the repository:
    ```sh
-   git clone https://github.com/your-username/Rock-Paper-Scissors.git
+   git clone https://github.com/Mohammed-Abed-Alkareem/Rock-Paper-Scissors-Game
    ```
 2. Open the project in Android Studio.
 3. Build the project and generate the APK file:
