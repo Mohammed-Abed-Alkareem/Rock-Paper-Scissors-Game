@@ -120,8 +120,6 @@
     </LinearLayout>
 
 
-
-    <!-- Cumulative Score -->
     <TextView
         android:id="@+id/score"
         android:layout_width="wrap_content"
